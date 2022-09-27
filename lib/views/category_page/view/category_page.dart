@@ -12,8 +12,16 @@ class CategoryPage extends StatelessWidget {
     return Scaffold(
       appBar: _appBar(),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        //mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 10.0),
+                child: Text("All categories",textAlign:TextAlign.left, style: TextStyle(fontWeight: FontWeight.bold, color: Colors.deepPurple, fontSize: 20)),
+              ),
+            ],
+          ),
           Obx((){
             return categoryController.isLoading.value?
                 Center(child: CircularProgressIndicator())
@@ -78,7 +86,7 @@ class CategoryPage extends StatelessWidget {
             width: MediaQuery.of(context).size.width / 2 - 29,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(10)),
-                color: Color(0xffffffff).withOpacity(0.46)),
+                color: Color(0xffffffff)),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
@@ -86,10 +94,10 @@ class CategoryPage extends StatelessWidget {
                   child: Align(
                     alignment: Alignment(1, 0.5),
                     child: Container(
-                        margin: const EdgeInsets.only(left: 16.0,bottom: 5),
+                        margin: const EdgeInsets.only(left: 8.0,bottom: 5),
                         padding: const EdgeInsets.all(8.0),
                         decoration: BoxDecoration(
-                            color: Color(0xff800080).withOpacity(0.51),
+                            color: Color(0xffd500d5),
                             borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(10),
                                 bottomLeft: Radius.circular(10))),
@@ -106,10 +114,10 @@ class CategoryPage extends StatelessWidget {
                 Align(
                   alignment: Alignment.topCenter,
                   child: Container(
-                    padding: EdgeInsets.all(8),
+                    //padding: EdgeInsets.all(8),
                     width: MediaQuery.of(context).size.width / 2 - 64,
                     height: MediaQuery.of(context).size.width / 2 - 64,
-                    child: Image.network(categoryController.categoryList[index].banner.toString(), fit: BoxFit.cover,)
+                    child: Image.network(categoryController.categoryList[index].banner.toString(), fit: BoxFit.contain,)
                   ),
                 ),
 

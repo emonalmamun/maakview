@@ -11,8 +11,16 @@ class OfferPage extends StatelessWidget {
     return Scaffold(
       appBar: _appBar(),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        //mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 10.0),
+                child: Text("All offers",textAlign:TextAlign.left, style: TextStyle(fontWeight: FontWeight.bold, color: Colors.deepPurple, fontSize: 20)),
+              ),
+            ],
+          ),
           Obx((){
             return offerController.isLoading.value?
             Center(child: CircularProgressIndicator())
@@ -22,7 +30,7 @@ class OfferPage extends StatelessWidget {
                 itemCount: offerController.offerList.length,
                 itemBuilder: (context,index) {
                   return Card(
-                    color: Color(0xffffffff),
+                    color: Colors.deepPurple.shade50,
                     margin: const EdgeInsets.symmetric(horizontal: 15,vertical: 10),
                     child: ListTile(
                       title: Text(offerController.offerList[index].title.toString()),

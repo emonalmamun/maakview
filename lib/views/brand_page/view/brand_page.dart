@@ -49,7 +49,7 @@ class BrandPage extends StatelessWidget {
                   child: Align(
                     alignment: Alignment(1, 0.5),
                     child: Container(
-                        margin: const EdgeInsets.only(left: 16.0,bottom: 5),
+                        margin: const EdgeInsets.only(left: 8.0,bottom: 5),
                         padding: const EdgeInsets.all(8.0),
                         decoration: BoxDecoration(
                             color: Color(0xffd500d5),
@@ -72,7 +72,7 @@ class BrandPage extends StatelessWidget {
                       padding: EdgeInsets.all(8),
                       width: MediaQuery.of(context).size.width / 2 - 64,
                       height: MediaQuery.of(context).size.width / 2 - 64,
-                      child: Image.network(brandController.brandList[index].logo.toString(),fit: BoxFit.cover,)
+                      child: Image.network(brandController.brandList[index].logo.toString(),fit: BoxFit.contain,)
                   ),
                 ),
 
